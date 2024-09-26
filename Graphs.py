@@ -13,7 +13,7 @@ class Graph:
         return False
     
     def add_edge(self, v1, v2):
-        if v1 not in self.adj_list[v2] and v2 not in self.adj_list[v1]:
+        if v1 in self.adj_list.keys() and v2 in self.adj_list.keys():
             self.adj_list[v1].append(v2)
             self.adj_list[v2].append(v1)
             return True
@@ -48,5 +48,6 @@ my_graph.add_edge('C','D')
 my_graph.add_edge('D','A')
 my_graph.add_edge('D','B')
 my_graph.remove_vertex('D')
+my_graph.remove_edge('A', 'B')
 
 my_graph.print_graph()
